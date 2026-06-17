@@ -1,10 +1,11 @@
 # DAO: Data Access Object 
 # libro_dao: Objeto de acceso a datos de la tabla libro
 
+from database import conexion
 from database.conexion import Conexion
 from models.libro import Libro
 
-class libroDAO:
+class LibroDAO:
     
     #SELECT * from libro
     def obtener_todos(self):
@@ -15,8 +16,14 @@ class libroDAO:
         registros = cursor.fetchall()
         
         libros = []
-        for registro in registro:
-            libro = Libro(registro.id, registro.titulo, registro.autor, registro.isbn,registro.disponible)
+        for registro in registros:
+            libro = Libro(
+            id=registro[0],
+              titulo=registro[1],
+              autor=registro[2],
+              isbn=registro[3],
+              disponible=registro[4]
+            )
             libros.append(libro)
         cursor.close()
         conexion.close()

@@ -1,12 +1,12 @@
 class Libro:
     
     # Metodo Constructor
-    def __init__(self, id_libro, titulo, autor, isbn):
-        self.id_libro = id_libro
+    def __init__(self, id, titulo, autor, isbn, disponible):
+        self.id = id
         self.titulo = titulo
         self.autor = autor
         self.isbn = isbn
-        self.disponible = True #Por defecto, el libro esta disponible
+        self.disponible = disponible #Por defecto, el libro esta disponible
     
     # Metodo para prestar un libro
     def prestar(self):
