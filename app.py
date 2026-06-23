@@ -32,7 +32,6 @@ def insertar_libro():
     try:
         libro_dao = LibroDAO()
         id = libro_dao.obtener_ultimo_id() + 1
-        print(f"id: {id}")
         libro = Libro(id, titulo, autor, isbn, disponible)
         libro_dao.insertar(libro)
         print("Insercion realizada correctamente.")
@@ -45,7 +44,7 @@ def main():
     print("=== BIBLIOTECA UNIVERSITARIA ===")
     print("Menu de opciones")
     print("1. Ver todos los libros")
-    print("2. Insertar un nuevo libro")
+    print("2. Insertar un nuevo libro")  
     print("3. Actualizar un libro")
     print("4. Eliminar un libro")
     opcion = int(input("Seleciona una opcion (1-4): "))
